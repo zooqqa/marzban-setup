@@ -1,18 +1,18 @@
 # Marzban VPN Setup Guide
 
-Полное руководство по установке и настройке Marzban VPN с поддержкой VLESS и multi-server инфраструктуры.
+Полное руководство по установке и настройке Marzban VPN с поддержкой VLESS WebSocket и multi-server инфраструктуры.
 
 ## 🚀 Быстрый старт
 
-### 1. Установка основного сервера (Master)
+### 1. Установка основного сервера (Complete Setup)
 
-На вашем основном сервере Ubuntu (Hetzner):
+**Полная установка с рабочим VLESS WebSocket:**
 
 ```bash
-# Скопируйте и выполните скрипт установки
-wget https://raw.githubusercontent.com/yourusername/marzban-setup/main/install_marzban.sh
-chmod +x install_marzban.sh
-sudo ./install_marzban.sh
+# Полная установка с правильной конфигурацией
+wget https://raw.githubusercontent.com/zooqqa/marzban-setup/main/install_marzban_complete.sh
+chmod +x install_marzban_complete.sh
+sudo ./install_marzban_complete.sh
 ```
 
 ### 2. Добавление дополнительных серверов (Nodes)
@@ -20,10 +20,23 @@ sudo ./install_marzban.sh
 На каждом новом сервере для расширения ГЕО:
 
 ```bash
-# Скопируйте и выполните скрипт установки node
-wget https://raw.githubusercontent.com/yourusername/marzban-setup/main/install_marzban_node.sh
-chmod +x install_marzban_node.sh
-sudo ./install_marzban_node.sh
+# Установка и настройка node сервера
+wget https://raw.githubusercontent.com/zooqqa/marzban-setup/main/add_marzban_node.sh
+chmod +x add_marzban_node.sh
+sudo ./add_marzban_node.sh
+```
+
+### 3. Альтернативные скрипты
+
+```bash
+# Базовая установка (если нужна кастомизация)
+wget https://raw.githubusercontent.com/zooqqa/marzban-setup/main/install_marzban.sh
+
+# Продакшн установка (SSL + Nginx)
+wget https://raw.githubusercontent.com/zooqqa/marzban-setup/main/setup_production.sh
+
+# Настройка WebSocket (если установлен базовый Marzban)
+wget https://raw.githubusercontent.com/zooqqa/marzban-setup/main/setup_vless_websocket.sh
 ```
 
 ## 📋 Подробная инструкция
